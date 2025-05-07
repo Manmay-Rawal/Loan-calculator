@@ -17,13 +17,13 @@ const UseRoutes = () => {
     <div>
       {shouldShowNavBar && <NavBar />}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/Loan-calculator" element={<Home />} />
+        <Route path="/Loan-calculator/about" element={<About />} />
         <Route
-          path="/Exchange_Rate_Live"
+          path="/Loan-calculator/Exchange_Rate_Live"
           element={<ExchangeRate />}
         />
-        <Route path="/Error_Page" element={<ErrorPage />} />
+        <Route path="/Loan-calculator/Error_Page" element={<ErrorPage />} />
       </Routes>
     </div>
   );
