@@ -1,18 +1,28 @@
-import React from 'react';
-import { Box, Typography } from '@mui/material';
-import Calculator from './components/Calculator';
-import Navbar from './components/navbar';
+import { BrowserRouter} from 'react-router-dom'
+import UseRoutes from './Router/UseRoutes.jsx'
+import React from 'react'
+import { Box } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
-const App = () => {
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
+function App() {
+
   return (
-    <Box sx={{ width: '100vw', height: '100vh', p: 4, boxSizing: 'border-box' }}>
-      <Navbar  />
-      <Typography variant="h4" align="center" gutterBottom>
-        Loan Calculator
-      </Typography>
-      <Calculator />
-    </Box>
-  );
-};
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+    <Box sx={{ width: '100vw', height: '100vh', boxSizing: 'border-box' }}>
+     <BrowserRouter>
+     <UseRoutes/>
+     </BrowserRouter>
+     </Box>
+     </ThemeProvider>
+  )
+}
 
-export default App;
+export default App
